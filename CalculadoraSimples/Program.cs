@@ -28,6 +28,12 @@ namespace CalculadoraSimples
                     Console.WriteLine("\nEncerrando...");
                     break;
                 }
+                if (opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "5")
+                {
+                    Console.WriteLine("\nOpção inválida! Pressione qualquer tecla para tentar novamente...");
+                    Console.ReadKey();
+                    continue;
+                }
 
                 Console.Write("\nDigite o primeiro número: ");
                 double num1 = double.Parse(Console.ReadLine());
@@ -55,8 +61,15 @@ namespace CalculadoraSimples
                         break;
 
                     case "4":
-                        resultado = num1 / num2;
-                        Console.WriteLine($"\nResultado: {num1} / {num2} = {resultado}");
+                        if (num2 == 0)
+                        {
+                            Console.WriteLine("\nErro: Não é possível dividir por zero!");
+                        }
+                        else
+                        {
+                            resultado = num1 / num2;
+                            Console.WriteLine($"\nResultado: {num1} / {num2} = {resultado}");
+                        }
                         break;
 
                     case "5":
