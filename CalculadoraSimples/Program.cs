@@ -19,6 +19,7 @@ namespace CalculadoraSimples
                 Console.WriteLine("2 = Subtração");
                 Console.WriteLine("3 = Multiplicação");
                 Console.WriteLine("4 = Divisão");
+                Console.WriteLine("5 - Potência");
                 Console.WriteLine("0 = Sair");
                 string opcao = Console.ReadLine();
 
@@ -56,6 +57,11 @@ namespace CalculadoraSimples
                     case "4":
                         resultado = num1 / num2;
                         Console.WriteLine($"\nResultado: {num1} / {num2} = {resultado}");
+                        break;
+
+                    case "5":
+                        resultado = Math.Pow(num1, num2);
+                        Console.WriteLine($"\nResultado: {num1}^{num2} = {resultado}");
                         break;
 
                     default:
